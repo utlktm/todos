@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hitman: Codename 47</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container" ng-controller="TodoCtrl">
+        <hr>
+        <div class="logo pull-left"></div>
+        <h1 class="title">Welcome in H:C47 Center</h1>
+        <h2>You have got <span>{{getTotalTodos()}}</span> targets to eliminate</h2>
+        <hr>
+        <ul>
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-model="todo.done" />
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+        <hr>
+        <form>
+            <input class="add-input" placeholder="Type your aim name.." type="text" ng-model="formTodoText" ng-model-instant />
+
+        </form>
+        <button class="btn" ng-click="addTodo()">Add</button>
+        <button class="btn" ng-click="clearCompleted()">Clear completed</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="http://underscorejs.org/underscore.js"></script>
+
+</body>
+
+</html>
